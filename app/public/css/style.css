@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+}
+
+#header {
+	display: block;
+	background: rgb(132, 135, 116);
+	height: 70px;
+	color: #eee;
+	padding: 2px;
+}
+
+.map-container {
+	display: block;
+	width: 100%;
+}
+
+#map {
+	display: inline-block;
+	vertical-align: top;
+	height: calc(100vh - 70px);
+	width: calc(100% - 300px);
+}
+
+#sidebar {
+	display: inline-block;
+	height: calc(100% - 70px);
+	width: 300px;
+	/*height: 100%;*/
+	background: green;
+}
