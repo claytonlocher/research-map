@@ -1,0 +1,98 @@
+//--Layouts----------------------------
+$headerHeight: 70px;
+$sidebarWidthFull: 300px;
+$sidebarWidthCollapsed: 60px;
+
+
+//--Colors-----------------------------
+$colorGis: #433930;
+$colorRivers: #76808C;
+$colorSociety: #787B68;
+$colorCities: #8D857B;
+
+$colorButtonBackground: #848774;
+$colorButtonHover: #9b7852;
+
+$colorLinkText: #9B7852;
+
+$colorFooterBackground: #342b23;
+
+//--Fonts------------------------------
+$fontHeaderText: 'Georgia', serif;
+$fontLongText: 'Verdana', serif;
+
+
+//-------------------------------------
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#header {
+  display: block;
+  background: rgb(132, 135, 116);
+  height: $headerHeight;
+  color: #eee;
+  margin-top: -4px;
+  padding: 4px 0 0 12px;
+  // font-family: 'Open Sans', sans-serif;
+}
+
+.map-container {
+  display: block;
+  width: 100%;
+}
+
+#map {
+  display: inline-block;
+  vertical-align: top;
+  // Need to use interpolation within a calc function
+  height: calc(100vh - #{$headerHeight});
+  width: calc(100% - #{$sidebarWidthFull});
+}
+
+#sidebar {
+  display: inline-block;
+  width: $sidebarWidthFull;
+  // Need to use interpolation within a calc function
+  height: calc(100vh - #{$headerHeight});
+  color: #333;
+
+  .sidebar-container {
+    margin-top: -1px;
+    padding: 1px 12px 0 12px;
+
+    .sidebar-top-search {
+      input {
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        margin-top: 12px;
+        font-size: 20px;
+        line-height: 140%;
+      }
+    }
+  }
+}
+
+@media (max-width: 2 * $sidebarWidthFull) {
+  #map {
+    display: block;
+    width: 100%;
+    // Need to use interpolation within a calc function
+    height: calc(60vh - (0.5 * #{$headerHeight}));
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  #sidebar {
+    display: block;
+    width: 100%;
+    // Need to use interpolation within a calc function
+    height: calc(40vh - (0.5 * #{$headerHeight}));
+    padding-top: 1px;
+    margin-top: -1px;
+  }
+
+}
