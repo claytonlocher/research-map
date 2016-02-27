@@ -1,0 +1,217 @@
+{
+  name: ["James Randal", "Angel"],
+  titles: ["State Climatologist", "Illinois State Water Survey"],
+  email: "jimangel@illinois.edu"
+}
+
+{
+  name: ["Luc E", "Anselin"],
+  titles: ["Adjunct Professor"],
+  email: "anselin@illinois.edu"
+}
+ 
+
+Bassett, Thomas J
+Professor
+bassett@illinois.edu
+ 
+Berg, Richard Carl
+Principal Geologist
+Interim Director
+rberg@illinois.edu
+ 
+Best, James Leonard
+PROF, Geography & Geographic InfoSci
+jimbest@illinois.edu
+ 
+Birkenholtz, Trevor
+Associate Professor
+trevbirk@illinois.edu
+ 
+Cidell, Julie L
+Associate Professor
+jcidell@illinois.edu
+ 
+Cienciala, Piotr
+Assistant Professor
+piotrc@illinois.edu
+ 
+Cohn, Matthew S
+OFFICE SUPPORT SPECIALIST
+mcohn@illinois.edu
+ 
+Cutts, Bethany Brooke
+Assistant Professor
+bcutts@illinois.edu
+ 
+Dill, Brian J
+Associate Professor
+dill@illinois.edu
+ 
+Ehlschlaeger, Charles Robert
+Adjunct Professor
+ehlschl1@illinois.edu
+ 
+Etter, Susan
+Office Administrator
+etter1@illinois.edu
+ 
+Frank, Thomas D
+Associate Professor Emeritus
+tdfrank@illinois.edu
+ 
+Gerhard, Ulrike
+Adjunct Professor
+gerhd175@illinois.edu
+ 
+Gille, Zsuzsa
+Associate Professor
+gille@illinois.edu
+ 
+Gomes de Amorim Filho, Carlos Alberto
+Visiting Research Scholar
+camorim@illinois.edu
+ 
+Goran, William D
+Adjunct Associate Professor
+goran@illinois.edu
+ 
+Greenberg, Jonathan
+Assistant Professor
+jgrn@illinois.edu
+ 
+Hannon, Bruce M Jubilee
+Professor, Liberal Arts and Sciences
+Emeritus Professor of Geography & Geographic Information Science
+bhannon@illinois.edu
+ 
+Hewings, Geoffrey J D
+Professor Emeritus
+hewings@illinois.edu
+ 
+Huang, Hui
+Visiting Scholar
+huihuang@illinois.edu
+ 
+Isard, Scott A
+Adjunct Professor
+isard@illinois.edu
+ 
+Jefferson, Brian J
+Assistant Professor
+bjjeffer@illinois.edu
+ 
+Jeong, Myeong Hun
+Postdoctoral Research Associate
+mhjeong@illinois.edu
+ 
+Johnson, Donald Lee
+Emeriti Faculty
+dljohns@illinois.edu
+ 
+Kalipeni, Ezekiel
+Professor
+kalipeni@illinois.edu
+ 
+Kashem, Md Shakil Bin
+Teaching Assistant
+Professor
+kashem1@illinois.edu
+ 
+Kwan, Mei-Po
+Professor
+mkwan@illinois.edu
+ 
+Liu, Yan
+SR RES PRGMMR
+yanliu@illinois.edu
+ 
+McLafferty, Sara L
+Professor
+smclaff@illinois.edu
+ 
+Miraftab, Faranak
+Professor, Urban & Regional Planning
+//Department Affiliate, Gender and Women's Studies
+faranak@illinois.edu
+ 
+Montanari, Bernadette
+VST SCHOLAR, Natural Res & Env Sci
+bmontana@illinois.edu
+ 
+//O'Hara, Marilyn Sue
+Clinical Associate Professor, Pathobiology
+Director, GIS and Spatial Analysis Laboratory
+moruiz@illinois.edu
+ 
+Padmanabhan, Anand
+Senior Research Scientist
+apadmana@illinois.edu
+ 
+Parker, Gary
+Professor
+parkerg@illinois.edu
+ 
+Punyasena, Surangi W
+Assistant Professor
+spunya1@illinois.edu
+ 
+Rhoads, Bruce L
+Professor
+brhoads@illinois.edu
+ 
+Ribot, Jesse C
+Professor
+ribot@illinois.edu
+ 
+Shi, Yi
+Visiting Scholar
+shiyi@illinois.edu
+ 
+Sivapalan, Murugesu
+Professor
+sivapala@illinois.edu
+ 
+Song, Chao
+Visiting Scholar
+chaosong@illinois.edu
+ 
+Tan, Yiming
+Visiting Scholar
+yiming@illinois.edu
+ 
+Thorn, Colin E
+Professor Emeritus
+cthorn@illinois.edu
+ 
+Wang, Shaowen
+Professor
+shaowen@illinois.edu
+ 
+Wang, Yuankun
+Visiting Scholar
+yuankunw@illinois.edu
+ 
+Wendland, Wayne M
+Adjunct Professor
+wayne@illinois.edu
+ 
+Westervelt, James Dahl
+Adjunct Professor
+westerve@illinois.edu
+ 
+Wilson, David
+Professor
+dwilson2@illinois.edu
+ 
+Xu, Qing
+Postdoctoral Research Associate
+qingxuf@illinois.edu
+ 
+Yin, Junjun
+Postdoctoral Research Associate
+jyn@illinois.edu
+ 
+Zhang, Zinan
+Visiting Scholar
+zinanzh@illinois.edu

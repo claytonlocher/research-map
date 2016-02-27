@@ -31,7 +31,7 @@ $fontLongText: 'Verdana', serif;
 
 #header {
   display: block;
-  background: rgb(132, 135, 116);
+  background: $colorSociety;
   height: $headerHeight;
   color: #eee;
   margin-top: -4px;
@@ -47,7 +47,7 @@ $fontLongText: 'Verdana', serif;
 #map {
   display: inline-block;
   vertical-align: top;
-  // Need to use interpolation within a calc function
+  // Must use Sass interpolation within a calc function
   height: calc(100vh - #{$headerHeight});
   width: calc(100% - #{$sidebarWidthFull});
 }
@@ -55,7 +55,7 @@ $fontLongText: 'Verdana', serif;
 #sidebar {
   display: inline-block;
   width: $sidebarWidthFull;
-  // Need to use interpolation within a calc function
+  // Must use Sass interpolation within a calc function
   height: calc(100vh - #{$headerHeight});
   color: #333;
 
@@ -80,7 +80,7 @@ $fontLongText: 'Verdana', serif;
   #map {
     display: block;
     width: 100%;
-    // Need to use interpolation within a calc function
+    // Must use Sass interpolation within a calc function
     height: calc(60vh - (0.5 * #{$headerHeight}));
     margin-bottom: 0;
     padding-bottom: 0;
@@ -89,7 +89,7 @@ $fontLongText: 'Verdana', serif;
   #sidebar {
     display: block;
     width: 100%;
-    // Need to use interpolation within a calc function
+    // Must use Sass interpolation within a calc function
     height: calc(40vh - (0.5 * #{$headerHeight}));
     padding-top: 1px;
     margin-top: -1px;
