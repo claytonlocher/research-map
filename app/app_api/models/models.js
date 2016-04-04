@@ -10,14 +10,18 @@ var locationSchema = new mongoose.Schema({
       type: String,
       default: 'Point'
     },
-    coordinates: [Number]
+    coordinates: {
+      lat: Number,
+      lng: Number 
+    }
   }
 });
 
 var projectSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    index: true
   },
   summary: {
     type: String
@@ -28,20 +32,35 @@ var projectSchema = new mongoose.Schema({
   fullText: {
     type: String
   },
-  tags: {
-    type: Array
-  },
+  researchAreas: [String],
+  tags: [{
+    type: String,
+    index: true
+  }],
   partners: [researcherSchema]
   locations: [locationSchema]
 });
 
 var researcherSchema = new mongoose.Schema({
-  // For input array [firstName, lastName]
   name: {
-    type: Array,
-    required: true
+    first: {
+      type: String,
+      required: true
+    },
+    middle: String,
+    last: {
+      type: String,
+      required: true
+    }
   },
-  titles: [String],
+  positions: [{
+    title: {
+      type: String
+    },
+    department: {
+      type: String
+    }
+  }],
   email: {
     type: String,
   },

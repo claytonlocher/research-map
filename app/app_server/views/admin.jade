@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  div.content-container
+    h1 Admin
+    button
+      i.fa.fa-plus
+      |  New Researcher
+    
+    form(action='/api/researcher', method='post')
+      label(for='formFirstName') First Name
+        input(type='text', name='firstName', id='formFirstName')
+      br
+      label(for='formMiddleName') Middle Name/Initial
+        input(type='text', name='middleName', id='formMiddleName')
+      br
+      label(for='formLastName') Last Name
+        input(type='text', name='lastName', id='formLastName')
+      br
+      label(for='formEmail') Email Address
+        input(type='email', name='email', id='formEmail')
+      br
+      label(for='formProfilLink') Profile Link
+        input(type='text', name='profileLink', id='formProfileLink')
+      br
+      br
+
+      h3 New Position
+      label(for='formPositionTitle') Position Title
+        input(type='text', name='positionTitle', id='formPositionTitle')
+      br
+      label(for='formPositionTitle') Department
+        input(type='text', name='positionDepartment', id='formPositionDepartment')
+      br
+      br
+
+      h3 Research Areas
+      
+      input(type='checkbox', id='checkGis', name='researchAreas', value='')
+      label(for='checkGis')  Geographic Information Science
+      br
+      input(type='checkbox', id='checkSociety', name='researchAreas', value='')
+      label(for='checkSociety')  Society, Space &amp; Environments
+      br
+      input(type='checkbox', id='checkRivers', name='researchAreas', value='')
+      label(for='checkRivers')  Rivers, Watersheds &amp; Landscape Dynamics
+      br
+      input(type='checkbox', id='checkCities', name='researchAreas', value='')
+      label(for='checkCities')  Cities &amp; Metropolitan Areas
+
+      br
+      button(type='submit') Submit
+
+
+
+block scripts
+  script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js')

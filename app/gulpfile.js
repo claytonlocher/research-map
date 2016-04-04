@@ -47,7 +47,6 @@ const gulp = require('gulp'),
 
   // Optimize any static images
 
-  
 
 //---------------------------------------------------------
 

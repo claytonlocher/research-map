@@ -16,6 +16,7 @@ $colorButtonHover: #9b7852;
 $colorLinkText: #9B7852;
 
 $colorFooterBackground: #342b23;
+$colorDarkButton: #342b23;
 
 //--Fonts------------------------------
 $fontHeaderText: 'Georgia', serif;
@@ -27,16 +28,49 @@ $fontLongText: 'Verdana', serif;
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:link, a:focus, a:visited {
+  color: inherit;
+}
+
+button {
+  background: $colorButtonBackground;
+  color: #eee;
+  border: none;
+  padding: 10px 14px;
+  vertical-align: middle;
+}
+
+button:hover {
+  background: $colorButtonHover;
+  text-decoration: default;
 }
 
 #header {
   display: block;
   background: $colorSociety;
   height: $headerHeight;
-  color: #eee;
-  margin-top: -4px;
-  padding: 4px 0 0 12px;
+  color: #eee !important;
+  margin-top: -1px;
+  padding: 1px 0 0 12px;
   // font-family: 'Open Sans', sans-serif;
+
+  span {
+    display: inline-block;
+    position: relative;
+    height: $headerHeight;
+    vertical-align: middle;
+    a {
+      margin-left: 40px;
+      text-decoration: none;
+      h3 {
+        margin-left: 40px;
+      }
+    }
+  }
 }
 
 .map-container {

@@ -5,8 +5,15 @@
 }
 
 {
-  name: ["Luc E", "Anselin"],
-  titles: ["Adjunct Professor"],
+  name: {
+    first: "Luc E",
+    middle: 
+    last: "Anselin"
+  },
+  positions: [{
+    title: "Adjunct Professor",
+    department: 'Geography & GIS'
+  }],
   email: "anselin@illinois.edu"
 }
  

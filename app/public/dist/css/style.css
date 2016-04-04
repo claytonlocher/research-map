@@ -1,14 +1,40 @@
 * {
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0; }
+
+a, a:link, a:focus, a:visited {
+  color: inherit; }
+
+button {
+  background: #848774;
+  color: #eee;
+  border: none;
+  padding: 10px 14px;
+  vertical-align: middle; }
+
+button:hover {
+  background: #9b7852;
+  text-decoration: default; }
 
 #header {
   display: block;
-  background: #848774;
+  background: #787B68;
   height: 70px;
-  color: #eee;
-  margin-top: -4px;
-  padding: 4px 0 0 12px; }
+  color: #eee !important;
+  margin-top: -1px;
+  padding: 1px 0 0 12px; }
+  #header span {
+    display: inline-block;
+    position: relative;
+    height: 70px;
+    vertical-align: middle; }
+    #header span a {
+      margin-left: 40px;
+      text-decoration: none; }
+      #header span a h3 {
+        margin-left: 40px; }
 
 .map-container {
   display: block;
