@@ -2,4 +2,12 @@
   .sidebar-container
     .sidebar-top-search
       input(type='text')
+    ul
+      each researcher in researchers
+        li
+          ul
+            li 
+              strong #{researcher.name.first} #{researcher.name.last}
+            li #{researcher.positions[0].title} - #{researcher.positions[0].department}
+            br
 

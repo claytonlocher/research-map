@@ -9,5 +9,6 @@ router.get('/', ctrl.map);
 
 // GET admin page
 router.get('/admin', ctrl.admin);
+router.post('/admin/new', ctrl.doAddResearcher);
 
 module.exports = router;

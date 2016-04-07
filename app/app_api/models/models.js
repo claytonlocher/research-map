@@ -18,6 +18,10 @@ var locationSchema = new mongoose.Schema({
 });
 
 var projectSchema = new mongoose.Schema({
+  netId: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true,
@@ -37,7 +41,7 @@ var projectSchema = new mongoose.Schema({
     type: String,
     index: true
   }],
-  partners: [researcherSchema]
+  partners: [String],
   locations: [locationSchema]
 });
 
@@ -66,7 +70,7 @@ var researcherSchema = new mongoose.Schema({
   },
   photoLink: {
     type: String
-  }
+  },
   profileLink: {
     type: String,
     default: 'https://www.geog.illinois.edu/'
@@ -75,6 +79,6 @@ var researcherSchema = new mongoose.Schema({
   projects: [projectSchema]
 });
 
-mongoose.model(researcherSchema);
+mongoose.model('Researcher', researcherSchema);
 
 
