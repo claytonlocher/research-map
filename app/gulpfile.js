@@ -11,16 +11,22 @@ const gulp = require('gulp'),
     del.sync('./dist/css/**/*.css');
   });
 
-  // Convert SASS to CSS
+  // Convert Sass to CSS
   gulp.task('styles:compile', ['styles:clean'], function() {
     return gulp.src('./public/src/css/**/*.scss')
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./public/dist/css'));
   });
 
-  // Watch SASS files to compile on save
-  gulp.task('styles:watch', ['styles:compile'], function() {
-    gulp.watch('./public/src/css/*.scss', ['styles:compile']);
+  // Copy non-Sass contents of CSS "src" to CSS "dist"
+  gulp.task('styles:transfer', ['styles:compile'], function() {
+    return gulp.src(['./public/src/css/*.css'])
+      .pipe(gulp.dest('./public/dist/css'));
+  });
+
+  // Watch Sass files to compile on save
+  gulp.task('styles:watch', ['styles:transfer'], function() {
+    gulp.watch(['./public/src/css/*.scss', './public/src/css/*.css'], ['styles:compile']);
   });
 
   // Trigger styles clean, compile, and watch
@@ -36,11 +42,16 @@ const gulp = require('gulp'),
 
   // Copy contents of JS "src" to JS "dist"
   gulp.task('scripts:transfer', ['scripts:clean'], function() {
-    return gulp.src(['./public/src/js/*.js'])
+    return gulp.src(['./public/src/js/**/*.js', './public/src/js/**/*.js.map'])
       .pipe(gulp.dest('./public/dist/js'));
   });
 
-  gulp.task('scripts', ['scripts:transfer']);
+  // Watch Sass files to compile on save
+  gulp.task('scripts:watch', ['scripts:transfer'], function() {
+    gulp.watch('./public/src/js/**/*.js', ['scripts:transfer']);
+  });
+
+  gulp.task('scripts', ['scripts:watch']);
 
 
 //--Images-------------------------------------------------

@@ -20,31 +20,12 @@ module.exports.getAllResearchers = function(req, res) {
 };
 
 module.exports.addNewResearcher = function(req, res) {
-  console.log(req.body);
-  Researcher.create({
-    netId: req.body.netId,
-    name: {
-      first: req.body.firstName,
-      middle: req.body.middleName,
-      last: req.body.lastName
-    },
-    positions: [{
-      title: req.body.positionTitle,
-      department: req.body.positionDepartment
-    }],
-    email: req.body.email,
-    photoLink: req.body.photoLink,
-    profileLink: req.body.profileLink,
-    researchAreas: [],
-    projects: []
-  }, function(err, researcher) {
+  Researcher.create(req.body, function(err, researcher) {
     if (err) {
       console.log(err);
       sendJsonResponse(res, 404, err);
     } else {
       sendJsonResponse(res, 201, researcher);
-      console.log('Researcher successfully created!');
-      console.log(researcher);
     }
   });
 };

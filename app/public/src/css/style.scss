@@ -61,13 +61,13 @@ button:hover {
   span {
     display: inline-block;
     position: relative;
+    line-height: $headerHeight;
     height: $headerHeight;
-    vertical-align: middle;
     a {
       margin-left: 40px;
       text-decoration: none;
       h3 {
-        margin-left: 40px;
+        display: inline-block;
       }
     }
   }

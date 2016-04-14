@@ -46,6 +46,10 @@ var projectSchema = new mongoose.Schema({
 });
 
 var researcherSchema = new mongoose.Schema({
+  netId: {
+    type: String,
+    required: true
+  },
   name: {
     first: {
       type: String,

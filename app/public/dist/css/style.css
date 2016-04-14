@@ -28,13 +28,13 @@ button:hover {
   #header span {
     display: inline-block;
     position: relative;
-    height: 70px;
-    vertical-align: middle; }
+    line-height: 70px;
+    height: 70px; }
     #header span a {
       margin-left: 40px;
       text-decoration: none; }
       #header span a h3 {
-        margin-left: 40px; }
+        display: inline-block; }
 
 .map-container {
   display: block;

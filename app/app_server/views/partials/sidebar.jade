@@ -1,13 +1,12 @@
 #sidebar
-  .sidebar-container
+  .sidebar-container(ng-controller='sidebarCtrl')
     .sidebar-top-search
-      input(type='text')
+      input(type='text', value='{{inputText}}', ng-model='researcherFilter', ng-change='getData()')
     ul
-      each researcher in researchers
-        li
-          ul
-            li 
-              strong #{researcher.name.first} #{researcher.name.last}
-            li #{researcher.positions[0].title} - #{researcher.positions[0].department}
-            br
+      li(ng-repeat='researcher in (filteredResearchers = (researchers | filter: researcherFilter))')
+        span
+          strong {{researcher.name.first}} {{researcher.name.last}}
+          br
+          | {{researcher.positions[0].title}} - {{researcher.positions[0].department}}
+      br
 
