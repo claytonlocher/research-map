@@ -6,7 +6,7 @@ const gulp = require('gulp'),
 
 //--Styles-------------------------------------------------
 
-  // Delete contents of "dist" CSS directory
+  // Delete contents of "dist" css directory
   gulp.task('styles:clean', function() {
     del.sync('./dist/css/**/*.css');
   });
@@ -18,7 +18,7 @@ const gulp = require('gulp'),
       .pipe(gulp.dest('./public/dist/css'));
   });
 
-  // Copy non-Sass contents of CSS "src" to CSS "dist"
+  // Copy non-Sass contents of css "src" to css "dist"
   gulp.task('styles:transfer', ['styles:compile'], function() {
     return gulp.src(['./public/src/css/*.css'])
       .pipe(gulp.dest('./public/dist/css'));
@@ -35,12 +35,12 @@ const gulp = require('gulp'),
 
 //--Scripts------------------------------------------------
 
-  // Delete the contents of "dist" JS directory
+  // Delete the contents of "dist" js directory
   gulp.task('scripts:clean', function() {
     del.sync('./public/dist/js/**/*.js');
   });
 
-  // Copy contents of JS "src" to JS "dist"
+  // Copy contents of js "src" to js "dist"
   gulp.task('scripts:transfer', ['scripts:clean'], function() {
     return gulp.src(['./public/src/js/**/*.js', './public/src/js/**/*.js.map'])
       .pipe(gulp.dest('./public/dist/js'));
@@ -56,9 +56,22 @@ const gulp = require('gulp'),
 
 //--Images-------------------------------------------------
 
-  // Optimize any static images
+  // TO DO: Optimize any static images
+
+  // Delete the contents of "dist" js directory
+  gulp.task('images:clean', function() {
+    del.sync('./public/dist/img/**/*');
+  });
+
+  // Copy contents of img "src" to img "dist"
+  gulp.task('images:transfer', ['images:clean'], function() {
+    return gulp.src('./public/src/img/**/*')
+      .pipe(gulp.dest('./public/dist/img'));
+  });
+
+  gulp.task('images', ['images:transfer']);
 
 
 //---------------------------------------------------------
 
-gulp.task('default', ['styles', 'scripts']);
+gulp.task('default', ['styles', 'scripts', 'images']);

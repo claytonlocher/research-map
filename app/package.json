@@ -12,7 +12,8 @@
     "jade": "~1.11.0",
     "mongoose": "^4.4.3",
     "morgan": "^1.7.0",
-    "request": "^2.70.0"
+    "request": "^2.70.0",
+    "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
     "del": "^2.2.0",
