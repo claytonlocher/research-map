@@ -11,5 +11,6 @@ router.get('/researchers', ctrlResearchers.getAllResearchers);
 router.get('/researcher/:netId', ctrlResearchers.getResearcherProfile);
 router.post('/researcher', ctrlResearchers.addNewResearcher);
 
+
 module.exports = router;
 

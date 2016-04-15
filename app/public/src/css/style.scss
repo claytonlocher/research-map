@@ -78,6 +78,14 @@ button:hover {
   width: 100%;
 }
 
+// #map {
+//   display: inline-block;
+//   vertical-align: top;
+//   // Must use Sass interpolation within a calc function
+//   height: calc(100vh - #{$headerHeight});
+//   width: calc(100% - #{$sidebarWidthFull});
+// }
+
 #map {
   display: inline-block;
   vertical-align: top;

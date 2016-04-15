@@ -1,8 +1,14 @@
 extends layout
 
 block content
-  //- #map
-  .map-container
-    #map
+
+  //- .map-container
+  //-   #map
+
+  .map-container(ng-controller='mapCtrl')
+    leaflet(id='map', center='center', tiles='tiles')
       
     include ./partials/sidebar
+
+block script
+  script(src='/js/myScript.js')
