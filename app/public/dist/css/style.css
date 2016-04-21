@@ -12,7 +12,8 @@ button {
   color: #eee;
   border: none;
   padding: 10px 14px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  transition: background 0.2s ease-out; }
 
 button:hover {
   background: #9b7852;
