@@ -1,38 +1,29 @@
 
 'use strict';
 
-angular.module('geogApp', ['leaflet-directive'])
+angular.module('geogApp', ['ngRoute', 'leaflet-directive']);
 
-  .controller('mapCtrl', ['$scope', function($scope) {
+function config($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'map/map.view.html',
+      controller: 'mapCtrl'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
+}
 
-    var mapboxAccessToken = 'pk.eyJ1IjoiY2xheXRvbmxvY2hlciIsImEiOiJFWjRDREVnIn0.mB4YLOk9B6Cb4dyMfzqhDA';
+angular.module('geogApp')
+  .config(['$routeProvider', config])
 
-    var mapboxTiles = {
-      name: 'Mapbox Light',
-      url: 'https://api.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
-      type: 'xyz',
-      options: {
-        mapid: 'mapbox.light',
-        apikey: mapboxAccessToken,
-        attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
-      }
-    };
 
-    $scope.center = {
-      // Champaign, IL (Main Quad)
-      lat: 40.107490,
-      lng: -88.227226,
-      zoom: 8
-    };
-
-    $scope.tiles = mapboxTiles;
-
-  }])
-  
+  // TO DO: Refactor sidebar into directive
   .controller('sidebarCtrl', ['$scope', '$http', function($scope, $http) {
     
     $scope.inputText = 'Filter researchers...';
 
+    // TO DO: Refactor API call into service
     $http.get('http://localhost:3000/api/researchers').then(function success(response) {
       var data = response.data;
       $scope.researchers = data;

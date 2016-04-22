@@ -37,7 +37,7 @@ module.exports.map = function(req, res) {
     data.messages = 'New researcher added successfully!';
   }
 
-  res.render('index', data);
+  res.render('layout', data);
 
 };
 

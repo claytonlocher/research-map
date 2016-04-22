@@ -22,12 +22,15 @@ html(ng-app='geogApp')
     
     include ./partials/header
 
-    block content
+    div(ng-view)
+        block content
 
     block scripts
         script(src='/js/angular/angular.min.js')
-        script(src='/app.js')
+        script(src='/lib/angular-route.min.js')
         script(src='/lib/angular-leaflet-directive.min.js')
+        script(src='/app.js')
+        script(src='/map/map.controller.js')
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
         //- script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
         script(src='/js/leaflet/leaflet.js')
