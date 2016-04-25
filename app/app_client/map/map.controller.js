@@ -3,7 +3,9 @@
 
 angular.module('geogApp')
 
-  .controller('mapCtrl', ['$scope', function mapCtrl($scope) {
+  .controller('mapCtrl', [function mapCtrl() {
+    // View model definition to replace $scope
+    var vm = this;
 
     var mapboxAccessToken = 'pk.eyJ1IjoiY2xheXRvbmxvY2hlciIsImEiOiJFWjRDREVnIn0.mB4YLOk9B6Cb4dyMfzqhDA';
 
@@ -18,14 +20,14 @@ angular.module('geogApp')
       }
     };
 
-    $scope.center = {
+    vm.center = {
       // Champaign, IL (Main Quad)
       lat: 40.107490,
       lng: -88.227226,
       zoom: 8
     };
 
-    $scope.tiles = mapboxTiles;
+    vm.tiles = mapboxTiles;
 
   }]);
 

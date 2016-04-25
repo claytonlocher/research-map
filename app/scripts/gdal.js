@@ -1,6 +1,7 @@
-// Convert shapefiles to jsons using ogr2ogr gdal
+// Convert shapefiles to GeoJSON using ogr2ogr gdal
 
-function run_cmd(cmd, args, callBack ) {
+function run_cmd(cmd, args, callBack) {
+
     var spawn = require('child_process').spawn;
     var child = spawn(cmd, args);
     var resp = "";
@@ -13,5 +14,6 @@ function run_cmd(cmd, args, callBack ) {
 // do gdal conversion
 // ogr2ogr -f GeoJSON -t_srs crs:84 area.geojson "./champaign/champaign.shp"
 
-run_cmd("ogr2ogr", ["-f", "GeoJSON", "-t_srs", "crs:84", "area.geojson", "./champaign/champaign.shp"], function(text) {console.log(text)});
+run_cmd("ogr2ogr", ["-f", "GeoJSON", "-t_srs", "crs:84", "area.geojson", "./champaign/champaign.shp"], function(resp) {console.log(resp)});
+
 

@@ -7,7 +7,8 @@ function config($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'map/map.view.html',
-      controller: 'mapCtrl'
+      controller: 'mapCtrl',
+      controllerAs: 'vm'
     })
     .otherwise({
       redirectTo: '/'
