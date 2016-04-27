@@ -23,7 +23,6 @@ html(ng-app='geogApp')
     include ./partials/header
 
     div(ng-view)
-        block content
 
     block scripts
         script(src='/js/angular/angular.min.js')
@@ -31,7 +30,7 @@ html(ng-app='geogApp')
         script(src='/app.js')
         script(src='/lib/angular-leaflet-directive.min.js')
         script(src='/map/map.controller.js')
-        script(src='/common/services/geoData.service.js')
+        script(src='/common/services/geogData.service.js')
         script(src='/common/services/geolocation.service.js')
 
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
