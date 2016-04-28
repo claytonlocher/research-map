@@ -1,11 +1,13 @@
 
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('geogApp')
+  angular.module('geogApp')
+    .controller('mapCtrl', mapCtrl);
 
-  .controller('mapCtrl', ['$scope', 'geolocation', 'geogData', function mapCtrl($scope, geolocation, geogData) {
+  mapCtrl.$inject = ['$scope', 'geolocation', 'geogData'];
 
-    // View model definition to replace $scope
+  function mapCtrl($scope, geolocation, geogData) {
     var vm = this;
 
     vm.message = geogData.test();
@@ -23,6 +25,8 @@ angular.module('geogApp')
         attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
       }
     };
+
+    vm.tiles = mapboxTiles;
 
     vm.center = {
       // Champaign, IL (Main Quad)
@@ -57,9 +61,8 @@ angular.module('geogApp')
 
     geolocation.getPosition(vm.geolocationSuccess, vm.geolocationError, vm.noGeolocation);
 
-    
+  }
 
-    vm.tiles = mapboxTiles;
 
-  }]);
+}());
 

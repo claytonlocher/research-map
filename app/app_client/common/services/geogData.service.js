@@ -1,16 +1,21 @@
 
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('geogApp')
-  .service('geogData', [geogData]);
+  angular.module('geogApp')
+    .service('geogData', geogData);
 
-function geogData($http) {
-  var test = function() {
-    return 'Data was received from the geogData service';
-  };
+  geogData.$inject = ['$http'];
 
-  return {
-    test: test
-  };
-}
+  function geogData($http) {
+    var test = function() {
+      return 'Data was received from the geogData service';
+    };
+
+    return {
+      test: test
+    };
+  }
+
+})();
 
