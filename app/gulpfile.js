@@ -2,7 +2,10 @@
 
 const gulp = require('gulp'),
       sass = require('gulp-sass'),
-      del = require('del');
+      del = require('del'),
+      uglify = require('gulp-uglify'),
+      concat = require('gulp-concat'),
+      sourcemaps = require('gulp-sourcemaps');
 
 //--Styles-------------------------------------------------
 
@@ -46,12 +49,29 @@ const gulp = require('gulp'),
       .pipe(gulp.dest('./public/dist/js'));
   });
 
-  // Watch Sass files to compile on save
+
+  // Watch js files to transfer on save
   gulp.task('scripts:watch', ['scripts:transfer'], function() {
     gulp.watch('./public/src/js/**/*.js', ['scripts:transfer']);
   });
 
-  gulp.task('scripts', ['scripts:watch']);
+  // Compress and transfer Angular application files
+  gulp.task('scripts:angular:compress', function() {
+    var scriptFiles = ['./app_client/**/*.js'];
+    return gulp.src(scriptFiles)
+      .pipe(sourcemaps.init())
+        .pipe(concat('geogApp.min.js'))
+        .pipe(uglify())
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('./public/dist/js'));
+  });
+
+  // Watch Angular files to compress on save
+  gulp.task('scripts:angular:watch', ['scripts:angular:compress'], function() {
+    gulp.watch('./app_client/**/*.js', ['scripts:angular:compress']);
+  });
+
+  gulp.task('scripts', ['scripts:watch', 'scripts:angular:watch']);
 
 
 //--Images-------------------------------------------------
