@@ -23,19 +23,24 @@ button:hover {
   display: block;
   background: #787B68;
   height: 70px;
-  color: #eee !important;
-  margin-top: -1px;
-  padding: 1px 0 0 12px; }
+  color: #eee !important; }
   #header span {
     display: inline-block;
-    position: relative;
     line-height: 70px;
-    height: 70px; }
+    height: 70px;
+    vertical-align: middle; }
+    #header span#navigation-links {
+      position: relative;
+      top: -2px; }
+      #header span#navigation-links span {
+        top: -6px; }
     #header span a {
       margin-left: 40px;
       text-decoration: none; }
-      #header span a h3 {
-        display: inline-block; }
+      #header span a h1 {
+        display: inline-block;
+        font-size: 24px;
+        margin: 0; }
 
 .map-container {
   display: block;

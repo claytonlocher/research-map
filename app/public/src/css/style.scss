@@ -55,20 +55,31 @@ button:hover {
   background: $colorSociety;
   height: $headerHeight;
   color: #eee !important;
-  margin-top: -1px;
-  padding: 1px 0 0 12px;
-  // font-family: 'Open Sans', sans-serif;
 
   span {
     display: inline-block;
-    position: relative;
     line-height: $headerHeight;
     height: $headerHeight;
+    vertical-align: middle;
+
+    &#navigation-links {
+      position: relative;
+      top: -2px;
+
+      span {
+        top: -6px;
+      }
+
+    }
+
     a {
       margin-left: 40px;
       text-decoration: none;
-      h3 {
+
+      h1 {
         display: inline-block;
+        font-size: 24px;
+        margin: 0;
       }
     }
   }

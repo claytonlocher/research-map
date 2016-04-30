@@ -10,8 +10,19 @@
   function mapCtrl($scope, geolocation, geogData) {
     var vm = this;
 
-    vm.message = geogData.test();
-    console.log(vm.message);
+    vm.header = {
+      siteTitle: 'Geography & GIS Research',
+      navigation: [{
+        href: '/admin',
+        text: 'Admin'
+      }, {
+        href: '/test',
+        text: 'Test'
+      }]
+    };
+
+    // vm.message = geogData.test();
+    // console.log(vm.message);
 
     var mapboxAccessToken = 'pk.eyJ1IjoiY2xheXRvbmxvY2hlciIsImEiOiJFWjRDREVnIn0.mB4YLOk9B6Cb4dyMfzqhDA';
 
@@ -64,5 +75,5 @@
   }
 
 
-}());
+})();
 

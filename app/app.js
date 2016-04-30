@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 require('./app_api/models/db');
 
 
-const routes = require('./app_server/routes/index');
+// const routes = require('./app_server/routes/index');
 const routesApi = require('./app_api/routes/index');
 
 var app = express();
@@ -28,8 +28,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', express.static(path.join(__dirname, 'public', 'dist')));
 app.use('/', express.static(path.join(__dirname, 'app_client')));
 
-app.use('/', routes);
+// app.use('/', routes);
 app.use('/api', routesApi);
+
+app.use(function(req, res) {
+  res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
+});
 
 
 // catch 404 and forward to error handler
