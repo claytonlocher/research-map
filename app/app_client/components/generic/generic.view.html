@@ -3,4 +3,4 @@
 
 <!-- ng-controller="genericCtrl" -->
 <h1>{{ vm.header.pageTitle }}</h1>
-<p>{{ vm.main.content | addHtmlLineBreaks }}</p>
+<p ng-bind-html="vm.main.content | addHtmlLineBreaks"></p>
