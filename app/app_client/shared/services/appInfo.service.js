@@ -11,11 +11,11 @@
       header: {
         siteTitle: 'Geography & GIS Research',
         navigation: [{
-          href: '/admin',
+          href: '/#admin',
           text: 'Admin'
         }, {
-          href: '/test',
-          text: 'Test'
+          href: '/#generic',
+          text: 'Generic'
         }]
       }
     };

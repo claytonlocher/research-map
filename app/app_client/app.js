@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('geogApp', ['ngRoute', 'leaflet-directive']);
+  angular.module('geogApp', ['ngRoute', 'ngSanitize', 'leaflet-directive']);
 
   function config($routeProvider, $locationProvider) {
     $routeProvider
@@ -13,6 +13,11 @@
       .when('/admin', {
         templateUrl: 'components/admin/admin.view.html',
         controller: 'adminCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/generic', {
+        templateUrl: 'components/generic/generic.view.html',
+        controller: 'genericCtrl',
         controllerAs: 'vm'
       })
       .otherwise({
