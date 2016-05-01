@@ -29,13 +29,16 @@ button:hover {
     line-height: 70px;
     height: 70px;
     vertical-align: middle; }
+    #header span#site-logo {
+      margin-left: 40px; }
     #header span#navigation-links {
       position: relative;
-      top: -2px; }
-      #header span#navigation-links span {
-        top: -6px; }
+      top: -2px;
+      margin-left: 40px; }
+      #header span#navigation-links > span:not(:first-child) {
+        top: -6px;
+        margin-left: 30px; }
     #header span a {
-      margin-left: 40px;
       text-decoration: none; }
       #header span a h1 {
         display: inline-block;

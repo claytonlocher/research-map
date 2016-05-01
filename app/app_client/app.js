@@ -3,20 +3,28 @@
 
   angular.module('geogApp', ['ngRoute', 'leaflet-directive']);
 
-  function config($routeProvider) {
+  function config($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'map/map.view.html',
+        templateUrl: 'components/map/map.view.html',
         controller: 'mapCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/admin', {
+        templateUrl: 'components/admin/admin.view.html',
+        controller: 'adminCtrl',
         controllerAs: 'vm'
       })
       .otherwise({
         redirectTo: '/'
       });
+
+    $locationProvider.html5Mode(true);
+
   }
 
   angular.module('geogApp')
-    .config(['$routeProvider', config])
+    .config(['$routeProvider', '$locationProvider', config])
 
 
     // TO DO: Refactor sidebar into directive
