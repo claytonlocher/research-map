@@ -1,9 +1,9 @@
 
+<!-- ng-controller="mapCtrl" -->
+
 <geog-app-header content="vm.header"></geog-app-header>
 
-<!-- ng-controller="mapCtrl" -->
-<div class="map-container"></div>
+<div class="map-container">
   <leaflet id="map" center="vm.center" tiles="vm.tiles"></leaflet>
-
-    <!-- From the Jade template -->
-    <!-- include ./partials/sidebar -->
+  <sidebar content="vm.sidebar"></sidebar>
+</div>

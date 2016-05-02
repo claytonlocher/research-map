@@ -13,8 +13,23 @@
     vm.header = appInfo.header;
     vm.header.pageTitle = '';
 
-    // vm.message = geogData.test();
-    // console.log(vm.message);
+    vm.sidebar = {
+      inputText: 'Filter researchers...'
+    };
+
+    // *** In progress
+    geogData.getResearchers().then(function success(data) {
+      console.log(data);
+      vm.sidebar.researchers = data;
+    }, function error(response) {
+      console.log(response);
+    });
+
+    vm.sidebar.getData = function() {
+      console.log('Filtered researchers:')
+      console.log(vm.sidebar.filteredResearchers);
+    };
+
 
     var mapboxAccessToken = 'pk.eyJ1IjoiY2xheXRvbmxvY2hlciIsImEiOiJFWjRDREVnIn0.mB4YLOk9B6Cb4dyMfzqhDA';
 
