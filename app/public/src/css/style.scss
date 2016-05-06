@@ -90,7 +90,7 @@ button:hover {
   }
 }
 
-.map-container {
+#map-container {
   display: block;
   width: 100%;
 }
@@ -109,6 +109,7 @@ button:hover {
   // Must use Sass interpolation within a calc function
   height: calc(100vh - #{$headerHeight});
   width: calc(100% - #{$sidebarWidthFull});
+  float: left;
 }
 
 #sidebar {
@@ -117,6 +118,7 @@ button:hover {
   // Must use Sass interpolation within a calc function
   height: calc(100vh - #{$headerHeight});
   color: #333;
+  float: right;
 
   .sidebar-container {
     margin-top: -1px;
@@ -132,6 +134,11 @@ button:hover {
         line-height: 140%;
       }
     }
+
+    li {
+      list-style-type: none;
+    }
+
   }
 }
 

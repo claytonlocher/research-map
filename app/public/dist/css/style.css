@@ -45,7 +45,7 @@ button:hover {
         font-size: 24px;
         margin: 0; }
 
-.map-container {
+#map-container {
   display: block;
   width: 100%; }
 
@@ -53,13 +53,15 @@ button:hover {
   display: inline-block;
   vertical-align: top;
   height: calc(100vh - 70px);
-  width: calc(100% - 300px); }
+  width: calc(100% - 300px);
+  float: left; }
 
 #sidebar {
   display: inline-block;
   width: 300px;
   height: calc(100vh - 70px);
-  color: #333; }
+  color: #333;
+  float: right; }
   #sidebar .sidebar-container {
     margin-top: -1px;
     padding: 1px 12px 0 12px; }
@@ -70,6 +72,8 @@ button:hover {
       margin-top: 12px;
       font-size: 20px;
       line-height: 140%; }
+    #sidebar .sidebar-container li {
+      list-style-type: none; }
 
 @media (max-width: 600px) {
   #map {

@@ -12,24 +12,14 @@
 
     vm.header = appInfo.header;
     vm.header.pageTitle = '';
+    
+    vm.researchers = {};
 
-    vm.sidebar = {
-      inputText: 'Filter researchers...'
-    };
-
-    // *** In progress
     geogData.getResearchers().then(function success(data) {
-      console.log(data);
-      vm.sidebar.researchers = data;
+      vm.researchers.all = data;
     }, function error(response) {
       console.log(response);
     });
-
-    vm.sidebar.getData = function() {
-      console.log('Filtered researchers:')
-      console.log(vm.sidebar.filteredResearchers);
-    };
-
 
     var mapboxAccessToken = 'pk.eyJ1IjoiY2xheXRvbmxvY2hlciIsImEiOiJFWjRDREVnIn0.mB4YLOk9B6Cb4dyMfzqhDA';
 
@@ -44,20 +34,21 @@
       }
     };
 
-    vm.tiles = mapboxTiles;
+    vm.map = {};
 
-    vm.center = {
+    vm.map.tiles = mapboxTiles;
+
+    vm.map.center = {
       // Champaign, IL (Main Quad)
       lat: 40.107490,
       lng: -88.227226,
       zoom: 9
     };
 
-
     vm.geolocationSuccess = function(position) {
       console.log('Success! We found your location.');
       $scope.$apply(function() {
-        vm.center = {
+        vm.map.center = {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
           zoom: 6

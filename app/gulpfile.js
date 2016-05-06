@@ -5,7 +5,8 @@ const gulp = require('gulp'),
       del = require('del'),
       uglify = require('gulp-uglify'),
       concat = require('gulp-concat'),
-      sourcemaps = require('gulp-sourcemaps');
+      sourcemaps = require('gulp-sourcemaps'),
+      gutil = require('gulp-util');
 
 //--Styles-------------------------------------------------
 
@@ -61,7 +62,7 @@ const gulp = require('gulp'),
     return gulp.src(scriptFiles)
       .pipe(sourcemaps.init())
         .pipe(concat('geogApp.min.js'))
-        .pipe(uglify())
+        .pipe(uglify().on('error', gutil.log))
       .pipe(sourcemaps.write())
       .pipe(gulp.dest('./public/dist/js'));
   });

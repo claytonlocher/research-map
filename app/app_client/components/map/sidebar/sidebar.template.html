@@ -1,17 +1,16 @@
-<div id="sidebar">
-  <div class="sidebar-container">
-    <div class="sidebar-top-search">
-      <input type="text" value="content.sidebar.inputText" ng-model="researcherFilter" ng-change="getData()"></input>
-    </div>
-    <ul>
-      <li ng-repeat="researcher in (filteredResearchers = (researchers | filter: researcherFilter))">
-        <span>
-          <strong>{{ researcher.name.first }} {{ researcher.name.last }}</strong>
-          <br/>
-          {{ researcher.positions[0].title }} - {{ researcher.positions[0].department }}
-        </span>
-      </li>
-      <br/>
-    </ul>
+<div class="sidebar-container">
+  <div class="sidebar-top-search">
+    <input type="text" placeholder="{{ vm.inputText }}" ng-model="researcherFilter" ng-change="vm.getData()"></input>
+    <h4>{{ vm.text }}</h4>
   </div>
+  <ul>
+    <li ng-repeat="researcher in (vm.researchers.filtered = (vm.researchers.all | filter: researcherFilter))">
+      <span>
+        <strong>{{ researcher.name.first }} {{ researcher.name.last }}</strong>
+        <br/>
+        {{ researcher.positions[0].title }} - {{ researcher.positions[0].department }}
+      </span>
+    </li>
+    <br/>
+  </ul>
 </div>
