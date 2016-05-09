@@ -7,7 +7,7 @@ const Researcher = mongoose.model('Researcher');
 function sendJsonResponse(res, status, content) {
   res.status(status);
   res.json(content);
-}
+};
 
 module.exports.getAllResearchers = function(req, res) {
   Researcher.find(function(err, researchers) {
