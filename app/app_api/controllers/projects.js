@@ -10,13 +10,13 @@ function sendJsonResponse(res, status, content) {
 };
 
 // methods
-module.exports.getAllResearchers = function(req, res) {
-  Researcher.find(function(err, researchers) {
+module.exports.getAllProjects = function(req, res) {
+  project.find(function(err, projects) {
     if (err) {
       console.log(err);
       return;
     }
-    sendJsonResponse(res, 200, researchers);
+    sendJsonResponse(res, 200, projects);
   });
 };
 
