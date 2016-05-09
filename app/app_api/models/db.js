@@ -3,10 +3,10 @@
 
 const mongoose = require('mongoose');
 
-var dbURI = 'mongodb://localhost/ggismap';
-if (process.env.NODE_ENV === 'production') {
-  dbURI = process.env.MONGOLAB_URI;
-}
+// Read in credentials to access MongoDB database on mLab
+var dbUSER = process.env.dbUSER;
+var dbPASSWORD = process.env.dbPASSWORD;
+var dbURI = 'mongodb://' + dbUSER + ':' + dbPASSWORD + '@ds017862.mlab.com:17862/ggis';
 
 mongoose.connect(dbURI);
 

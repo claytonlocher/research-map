@@ -10,6 +10,11 @@
         controller: 'mapCtrl',
         controllerAs: 'vm'
       })
+      .when('/researcher/:netId', {
+        templateUrl: 'components/researcher/researcher.view.html',
+        controller: 'researcherCtrl',
+        controllerAs: 'vm'
+      })
       .when('/admin', {
         templateUrl: 'components/admin/admin.view.html',
         controller: 'adminCtrl',
