@@ -4,6 +4,7 @@
 <geog-app-header content="vm.header"></geog-app-header>
 
 <div id="map-container">
-  <leaflet id="map" center="vm.map.center" tiles="vm.map.tiles"></leaflet>
-  <sidebar id="sidebar" researchers="vm.researchers"></sidebar>
+  <p>{{ eventDetected }}</p>
+  <leaflet id="map" center="vm.map.center" tiles="vm.map.tiles" layers="vm.map.layers"></leaflet>
+  <sidebar id="sidebar" researchers="vm.researchers" hover="vm.map.currentHover"></sidebar>
 </div>

@@ -22,7 +22,8 @@
     return {
       restrict: 'E',
       scope: {
-        researchers: '=researchers'
+        researchers: '=researchers',
+        hover: '=hover'
       },
       bindToController: true,
       controller: sidebarCtrl,

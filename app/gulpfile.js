@@ -24,7 +24,7 @@ const gulp = require('gulp'),
 
   // Copy non-Sass contents of css "src" to css "dist"
   gulp.task('styles:transfer', ['styles:compile'], function() {
-    return gulp.src(['./public/src/css/*.css'])
+    return gulp.src(['./public/src/css/**/*.css'])
       .pipe(gulp.dest('./public/dist/css'));
   });
 

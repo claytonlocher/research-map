@@ -1,7 +1,9 @@
 <div class="sidebar-container">
   <div class="sidebar-top-search">
     <input type="text" placeholder="{{ vm.inputText }}" ng-model="researcherFilter" ng-change="vm.getData()"></input>
-    <h4>{{ vm.text }}</h4>
+    <br/>
+    <p><strong>GEOID: </strong>{{ vm.hover.properties.GEOID }}</p>
+    <br/>
   </div>
   <ul>
     <li ng-repeat="researcher in (vm.researchers.filtered = (vm.researchers.all | filter: researcherFilter))">

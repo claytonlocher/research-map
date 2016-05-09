@@ -28,6 +28,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', express.static(path.join(__dirname, 'public', 'dist')));
 app.use('/', express.static(path.join(__dirname, 'app_client')));
 
+// Serve up test GeoJSON data
+app.use('/data', express.static(path.join(__dirname, 'test_data')));
+
+
 // app.use('/', routes);
 app.use('/api', routesApi);
 
