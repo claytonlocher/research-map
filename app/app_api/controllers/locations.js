@@ -2,13 +2,15 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Researcher = mongoose.model('Researcher');
+const location = mongoose.model('Location');
 
 function sendJsonResponse(res, status, content) {
   res.status(status);
   res.json(content);
 };
 
+
+// methods
 module.exports.getAllResearchers = function(req, res) {
   Researcher.find(function(err, researchers) {
     if (err) {

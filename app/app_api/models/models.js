@@ -84,5 +84,5 @@ var researcherSchema = new mongoose.Schema({
 });
 
 mongoose.model('Researcher', researcherSchema);
-
-
+mongoose.model('Project', projectSchema);
+mongoose.model('Location', locationSchema);
