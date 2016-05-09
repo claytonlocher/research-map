@@ -9,7 +9,6 @@ function sendJsonResponse(res, status, content) {
   res.json(content);
 };
 
-
 // methods
 module.exports.getAllResearchers = function(req, res) {
   Researcher.find(function(err, researchers) {
