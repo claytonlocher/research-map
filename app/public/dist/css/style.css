@@ -61,7 +61,8 @@ button:hover {
   width: 300px;
   height: calc(100vh - 70px);
   color: #333;
-  float: right; }
+  float: right;
+  overflow-y: scroll; }
   #sidebar .sidebar-container {
     margin-top: -1px;
     padding: 1px 12px 0 12px; }

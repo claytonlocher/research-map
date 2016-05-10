@@ -119,6 +119,7 @@ button:hover {
   height: calc(100vh - #{$headerHeight});
   color: #333;
   float: right;
+  overflow-y: scroll;
 
   .sidebar-container {
     margin-top: -1px;

@@ -8,9 +8,13 @@ var dbUSER = process.env.dbUSER;
 var dbPASSWORD = process.env.dbPASSWORD;
 var dbURI = 'mongodb://' + dbUSER + ':' + dbPASSWORD + '@ds017862.mlab.com:17862/ggis';
 
-mongoose.connect(dbURI);
+if (dbUSER && dbPASSWORD) {
+  mongoose.connect(dbURI);
+} else {
+  console.log('No database credentials detected.');
+}
 
-// If running on Windows, add SIGINT listener with readline herex
+// If running on Windows, add SIGINT listener with readline here
 var db = mongoose.connection;
 
 db.on('connected', () => {
