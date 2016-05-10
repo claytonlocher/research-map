@@ -3,7 +3,7 @@
 
 const mongoose = require('mongoose');
 const Researcher = mongoose.model('Researcher');
-// const Project = mongoose.model('Project');
+const Project = mongoose.model('Project');
 
 function sendJsonResponse(res, status, content) {
   res.status(status);

@@ -2,3 +2,48 @@
 
 <!-- ng-controller="adminCtrl" -->
 <h3>{{ vm.header.pageTitle }}</h3>
+
+<div class="content-container">
+  <h1>Admin</h1>
+  <button><i class="fa fa-plus"></i> New Researcher</button>
+  <form id="newResearcherForm" ng-submit="vm.onFormSubmit()">
+    <label for="formNetId">NetID
+      <input type="text" name="netId" id="formNetId" ng-model="vm.formData.netId"/>
+    </label><br/>
+    <label for="formFirstName">First Name
+      <input type="text" name="firstName" id="formFirstName" ng-model="vm.formData.firstName"/>
+    </label><br/>
+    <label for="formMiddleName">Middle Name/Initial
+      <input type="text" name="middleName" id="formMiddleName" ng-model="vm.formData.middleName"/>
+    </label><br/>
+    <label for="formLastName">Last Name
+      <input type="text" name="lastName" id="formLastName" ng-model="vm.formData.lastName"/>
+    </label><br/>
+    <label for="formEmail">Email Address
+      <input type="email" name="email" id="formEmail" ng-model="vm.formData.email"/>
+    </label><br/>
+    <label for="formProfilLink">Profile Link
+      <input type="text" name="profileLink" id="formProfileLink" ng-model="vm.formData.profileLink"/>
+    </label><br/>
+    <label for="formPhotoLink">Photo Link
+      <input type="text" name="photoLink" id="formPhotoLink" ng-model="vm.formData.photoLink"/>
+    </label><br/><br/>
+    <h3>New Position</h3>
+    <label for="formPositionTitle">Position Title
+      <input type="text" name="positionTitle" id="formPositionTitle" ng-model="vm.formData.positionTitle"/>
+    </label><br/>
+    <label for="formPositionTitle">Department
+      <input type="text" name="positionDepartment" id="formPositionDepartment" ng-model="vm.formData.positionDepartment"/>
+    </label><br/><br/>
+    <h3>Research Areas</h3>
+    <input type="checkbox" id="checkGis" name="researchAreas" value="" ng-model="vm.formData.researchAreas.gis"/>
+    <label for="checkGis"> Geographic Information Science</label><br/>
+    <input type="checkbox" id="checkSociety" name="researchAreas" value="" ng-model="vm.formData.researchAreas.society"/>
+    <label for="checkSociety"> Society, Space &amp; Environments</label><br/>
+    <input type="checkbox" id="checkRivers" name="researchAreas" value="" ng-model="vm.formData.researchAreas.rivers"/>
+    <label for="checkRivers"> Rivers, Watersheds &amp; Landscape Dynamics</label><br/>
+    <input type="checkbox" id="checkCities" name="researchAreas" value="" ng-model="vm.formData.researchAreas.cities"/>
+    <label for="checkCities"> Cities &amp; Metropolitan Areas</label><br/>
+    <button type="submit">Submit</button>
+  </form>
+</div>

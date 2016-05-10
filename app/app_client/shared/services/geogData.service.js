@@ -12,7 +12,7 @@
     var getResearchers = function() {
       var defer = $q.defer();
 
-      $http.get('http://localhost:3000/api/researchers').then(function success(response) {
+      $http.get('/api/researchers').then(function success(response) {
         var data = response.data;
         defer.resolve(data);
       }, function error(response) {
@@ -22,8 +22,46 @@
       return defer.promise;
     };
 
+    var newResearcher = function(data) {
+      var defer = $q.defer();
+
+      var postData = {
+        netId: data.netId,
+        name: {
+          first: data.firstName,
+          middle: data.middleName,
+          last: data.lastName
+        },
+        positions: [{
+          title: data.positionTitle,
+          department: data.positionDepartment
+        }],
+        email: data.email,
+        photoLink: data.photoLink,
+        profileLink: data.profileLink,
+        researchAreas: [],
+        projects: []
+      };
+
+      var areas = Object.keys(data.researchAreas);
+      for (var i=0; i < areas.length; i++) {
+        if (data.researchAreas[areas[i]]) {
+          postData.researchAreas.push(areas[i]);
+        }
+      }
+
+      $http.post('/api/researcher', postData).then(function success(response) {
+        defer.resolve(response);
+      }, function error(response) {
+        console.log(response);
+        defer.reject(response);
+      });
+      return defer.promise;
+    };
+
     return {
-      getResearchers: getResearchers
+      getResearchers: getResearchers,
+      newResearcher: newResearcher
     };
   }
 
