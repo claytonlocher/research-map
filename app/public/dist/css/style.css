@@ -14,6 +14,8 @@ button {
   padding: 10px 14px;
   vertical-align: middle;
   transition: background 0.2s ease-out; }
+  button.primary {
+    background: #76808C; }
 
 button:hover {
   background: #9b7852;

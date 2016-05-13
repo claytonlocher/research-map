@@ -1,0 +1,51 @@
+<div class="modal-content">
+  <form ng-submit="vm.onFormSubmit()">
+    <div class="modal-header">
+      <button type="button" ng-click="vm.modal.cancel()" class="close"></button>
+      <h4 class="modal-title">Add New Researcher</h4>
+    </div>
+    <div class="modal-body">
+      <label for="formNetId">NetID
+        <input type="text" name="netId" id="formNetId" ng-model="vm.formData.netId"/>
+      </label><br/>
+      <label for="formFirstName">First Name
+        <input type="text" name="firstName" id="formFirstName" ng-model="vm.formData.firstName"/>
+      </label><br/>
+      <label for="formMiddleName">Middle Name/Initial
+        <input type="text" name="middleName" id="formMiddleName" ng-model="vm.formData.middleName"/>
+      </label><br/>
+      <label for="formLastName">Last Name
+        <input type="text" name="lastName" id="formLastName" ng-model="vm.formData.lastName"/>
+      </label><br/>
+      <label for="formEmail">Email Address
+        <input type="email" name="email" id="formEmail" ng-model="vm.formData.email"/>
+      </label><br/>
+      <label for="formProfilLink">Profile Link
+        <input type="text" name="profileLink" id="formProfileLink" ng-model="vm.formData.profileLink"/>
+      </label><br/>
+      <label for="formPhotoLink">Photo Link
+        <input type="text" name="photoLink" id="formPhotoLink" ng-model="vm.formData.photoLink"/>
+      </label><br/><br/>
+      <h3>New Position</h3>
+      <label for="formPositionTitle">Position Title
+        <input type="text" name="positionTitle" id="formPositionTitle" ng-model="vm.formData.positionTitle"/>
+      </label><br/>
+      <label for="formPositionTitle">Department
+        <input type="text" name="positionDepartment" id="formPositionDepartment" ng-model="vm.formData.positionDepartment"/>
+      </label><br/><br/>
+      <h3>Research Areas</h3>
+      <input type="checkbox" id="checkGis" name="researchAreas" value="" ng-model="vm.formData.researchAreas.gis"/>
+      <label for="checkGis"> Geographic Information Science</label><br/>
+      <input type="checkbox" id="checkSociety" name="researchAreas" value="" ng-model="vm.formData.researchAreas.society"/>
+      <label for="checkSociety"> Society, Space &amp; Environments</label><br/>
+      <input type="checkbox" id="checkRivers" name="researchAreas" value="" ng-model="vm.formData.researchAreas.rivers"/>
+      <label for="checkRivers"> Rivers, Watersheds &amp; Landscape Dynamics</label><br/>
+      <input type="checkbox" id="checkCities" name="researchAreas" value="" ng-model="vm.formData.researchAreas.cities"/>
+      <label for="checkCities"> Cities &amp; Metropolitan Areas</label><br/>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="vm.modal.cancel()" type="button" class="btn btn-default">Cancel</button>
+      <button type="submit" class="primary">Submit</button>
+    </div>
+  </form>
+</div>

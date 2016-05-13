@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('geogApp', ['ngRoute', 'ngSanitize', 'leaflet-directive']);
+  angular.module('geogApp', ['ngRoute', 'ngSanitize', 'leaflet-directive', 'ui.bootstrap']);
 
   function config($routeProvider, $locationProvider) {
     $routeProvider

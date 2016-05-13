@@ -43,6 +43,11 @@ button {
   padding: 10px 14px;
   vertical-align: middle;
   transition: background 0.2s ease-out;
+
+  &.primary {
+    background: $colorRivers;
+  }
+
 }
 
 button:hover {
