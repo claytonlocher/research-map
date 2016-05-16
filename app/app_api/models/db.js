@@ -3,12 +3,12 @@
 
 const mongoose = require('mongoose');
 
-// Read in credentials to access MongoDB database on mLab
-var dbUSER = process.env.dbUSER;
-var dbPASSWORD = process.env.dbPASSWORD;
-var dbURI = 'mongodb://' + dbUSER + ':' + dbPASSWORD + '@ds017862.mlab.com:17862/ggis';
+// Read credentials to access MongoDB database on mLab
+var dbUSER = process.env.DB_USER;
+var dbPASSWORD = process.env.DB_PASSWORD;
+var dbURI = 'mongodb://' + DB_USER + ':' + DB_PASSWORD + '@ds017862.mlab.com:17862/ggis';
 
-if (dbUSER && dbPASSWORD) {
+if (DB_USER && DB_PASSWORD) {
   mongoose.connect(dbURI);
 } else {
   console.log('No database credentials detected.');
@@ -59,3 +59,4 @@ process.on('SIGTERM', () => {
 });
 
 require('./models');
+require('./users');

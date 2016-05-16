@@ -1,0 +1,20 @@
+<div class="modal-content">
+  <form ng-submit="vm.onFormSubmit()">
+    <div class="modal-header">
+      <button type="button" ng-click="vm.modal.cancel()" class="close"></button>
+      <h4 class="modal-title">Add New Project</h4>
+    </div>
+    <div class="modal-body">
+      <label for="formNetId">NetID
+        <input type="text" name="netId" id="formNetId" ng-model="vm.formData.netId"/>
+      </label><br/><br/>
+      <label for="formNetId">Spatial Data
+        <input type="file" name="spatialData" id="formSpatialData" file-model="spatialData"/>
+      </label><br/>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="vm.modal.cancel()" type="button" class="btn btn-default">Cancel</button>
+      <button type="submit" class="primary">Submit</button>
+    </div>
+  </form>
+</div>

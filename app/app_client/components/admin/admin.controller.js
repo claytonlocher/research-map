@@ -20,15 +20,24 @@
         controllerAs: 'vm',
         templateUrl: '/components/admin/newResearcherModal/newResearcherModal.view.html'
       });
-
       modalInstance.result.then(function(response) {
         console.log('Data received by form:');
         console.log(response.data);
       });
-
     };
 
-    
+    vm.popupNewProjectForm = function() {
+      var modalInstance = $uibModal.open({
+        animation: false,
+        controller: 'newProjectModalCtrl',
+        controllerAs: 'vm',
+        templateUrl: '/components/admin/newProjectModal/newProjectModal.view.html'
+      });
+      modalInstance.result.then(function(response) {
+        console.log('Data received by form:');
+        console.log(response.data);
+      });
+    };
 
   }
 
