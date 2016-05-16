@@ -1,7 +1,7 @@
 'use strict';
 
 // Module dependencies
-require('dotenv').load();
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
