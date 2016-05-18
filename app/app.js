@@ -9,9 +9,10 @@ const logger = require('morgan');
 // const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const multer = require('multer');
+const passport = require('passport');
 
 require('./app_api/models/db');
-
+require('./app_api/config/passport');
 
 // const routes = require('./app_server/routes/index');
 const routesApi = require('./app_api/routes/index');
@@ -31,9 +32,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', express.static(path.join(__dirname, 'public', 'dist')));
 app.use('/', express.static(path.join(__dirname, 'app_client')));
 
+// Initialize Passport after static middleware and before auth route handlers
+app.use(passport.initialize());
+
 // Serve up test GeoJSON data
 app.use('/data', express.static(path.join(__dirname, 'test_data')));
-
 
 // app.use('/', routes);
 app.use('/api', routesApi);
