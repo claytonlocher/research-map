@@ -6,4 +6,14 @@
   <h1>Admin</h1>
   <button ng-click="vm.popupNewResearcherForm()"><i class="fa fa-plus"></i> New Researcher</button>
   <button ng-click="vm.popupNewProjectForm()"><i class="fa fa-plus"></i> New Project</button>
+  <section class="project-list">
+    <ul>
+      <li ng-repeat="project in vm.allProjects">
+        <h3>{{ project.title }}</h3>
+        <p><strong>Summary:</strong> {{ project.summary }}</p>
+        <p>{{ project.fullText }}</p>
+        <p><a href="{{ project.projectLink }}">{{ project.projectLink }}</a></p>
+      </li>
+    </ul>
+  </section>
 </div>

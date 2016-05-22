@@ -20,6 +20,7 @@
     };
 
     vm.onFormSubmit = function() {
+      console.log(vm.formData);
       geogData.newProject(vm.formData).then(function success(response) {
         console.log('Success! Added new project.');
         vm.modal.close(response);

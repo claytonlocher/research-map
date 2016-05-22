@@ -7,8 +7,35 @@
     <div class="modal-body">
       <label for="formNetId">NetID
         <input type="text" name="netId" id="formNetId" ng-model="vm.formData.netId"/>
+      </label><br/>
+      <label for="formProjectTitle">Project Title
+        <input type="text" name="projectTitle" id="formProjectTitle" ng-model="vm.formData.projectTitle"/>
+      </label><br/>
+      <label for="formProjectSummary">Project Summary
+        <textarea rows="8" cols="40" name="projectSummary" id="formProjectSummary" ng-model="vm.formData.projectSummary"></textarea>
+      </label><br/>
+      <label for="formProjectFullText">Project Full Text
+        <textarea rows="8" cols="40" name="projectFullText" id="formProjectFullText" ng-model="vm.formData.projectFullText"></textarea>
+      </label><br/>
+      <label for="formProjectLink">Project Link
+        <input type="url" name="projectLink" id="formProjectLink" ng-model="vm.formData.projectLink"/>
       </label><br/><br/>
-      <label for="formNetId">Spatial Data
+      <label for="formProjectTags">Project Tags
+        <input type="text" name="projectTags" id="formProjectTags" ng-model="vm.formData.projectTags"/>
+      </label><br/>
+      <label for="formProjectTags">Project Partners
+        <input type="text" name="projectPartners" id="formProjectPartners" ng-model="vm.formData.projectPartners"/>
+      </label><br/>
+      <h3>Research Areas</h3>
+      <input type="checkbox" id="checkGis" name="researchAreas" value="" ng-model="vm.formData.researchAreas.gis"/>
+      <label for="checkGis"> Geographic Information Science</label><br/>
+      <input type="checkbox" id="checkSociety" name="researchAreas" value="" ng-model="vm.formData.researchAreas.society"/>
+      <label for="checkSociety"> Society, Space &amp; Environments</label><br/>
+      <input type="checkbox" id="checkRivers" name="researchAreas" value="" ng-model="vm.formData.researchAreas.rivers"/>
+      <label for="checkRivers"> Rivers, Watersheds &amp; Landscape Dynamics</label><br/>
+      <input type="checkbox" id="checkCities" name="researchAreas" value="" ng-model="vm.formData.researchAreas.cities"/>
+      <label for="checkCities"> Cities &amp; Metropolitan Areas</label><br/>
+      <label for="formSpatialData">Spatial Data
         <input type="file" name="spatialData" id="formSpatialData" file-model="spatialData"/>
       </label><br/>
     </div>

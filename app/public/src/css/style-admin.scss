@@ -5,13 +5,42 @@
   padding: 0 30px;
   max-width: 1000px;
   color: #222;
+
+  .project-list {
+    margin-top: 24px;
+
+    li {
+      margin: 16px 0;
+    }
+
+  }
+
 }
 
 form {
+
+  // label {
+  //   position: relative;
+  //   top: 3em;
+  //   line-height: 2em;
+
+  //   input, textarea {
+  //     position: absolute;
+  //     top: 1.5em;
+  //     left: 0;
+  //   }
+
+  // }
+
   input[type='text'], input[type='email'] {
     height: 40px;
     margin-top: 12px;
-    margin-left: 8px;
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  textarea {
+    margin-top: 12px;
     font-size: 18px;
     line-height: 140%;
   }

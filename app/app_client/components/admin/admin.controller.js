@@ -5,9 +5,9 @@
   angular.module('geogApp')
     .controller('adminCtrl', adminCtrl);
 
-  adminCtrl.$inject = ['appInfo', 'geogData', '$uibModal'];
+  adminCtrl.$inject = ['appInfo', 'geogData', '$http', '$uibModal'];
 
-  function adminCtrl(appInfo, geogData, $uibModal) {
+  function adminCtrl(appInfo, geogData, $http, $uibModal) {
     var vm = this;
 
     vm.header = appInfo.header;
@@ -38,6 +38,12 @@
         console.log(response.data);
       });
     };
+
+    $http.get('/api/projects').then(function success(response) {
+      vm.allProjects = response.data;
+    }, function error(response) {
+      console.log(response);
+    });
 
   }
 

@@ -20,9 +20,10 @@ router.get('/researcher/:netId', ctrlResearchers.getResearcherProfile);
 router.post('/researcher', auth, ctrlResearchers.addNewResearcher);
 
 // Projects
-// router.get('/projects', ctrlProjects.???);
+router.get('/projects', ctrlProjects.getAllProjects);
 router.post('/project', auth, ctrlProjects.addNewProject);
 
+// Users
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
