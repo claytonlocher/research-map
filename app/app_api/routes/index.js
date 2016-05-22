@@ -3,6 +3,11 @@
 
 const express = require('express');
 const router = express.Router();
+const jwt = require('express-jwt');
+const auth = jwt({
+  secret: process.env.JWT_SECRET,
+  userProperty: 'payload'
+});
 
 var ctrlResearchers = require('../controllers/researchers');
 var ctrlProjects = require('../controllers/projects');
@@ -12,11 +17,11 @@ var ctrlAuth = require('../controllers/authentication');
 // Researchers
 router.get('/researchers', ctrlResearchers.getAllResearchers);
 router.get('/researcher/:netId', ctrlResearchers.getResearcherProfile);
-router.post('/researcher', ctrlResearchers.addNewResearcher);
+router.post('/researcher', auth, ctrlResearchers.addNewResearcher);
 
 // Projects
 // router.get('/projects', ctrlProjects.???);
-router.post('/project', ctrlProjects.addNewProject);
+router.post('/project', auth, ctrlProjects.addNewProject);
 
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);

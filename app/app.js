@@ -53,7 +53,19 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// Error handlers
+
+// ERROR HANDLERS
+
+// Catch unauthorized errors
+app.use(function(err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401);
+    res.json({
+      "message": err.name + ": " + err.message
+    });
+  }
+});
+
 
 // Development error handler
 // Will print stacktrace

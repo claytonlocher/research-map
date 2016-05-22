@@ -50,16 +50,23 @@ module.exports.getResearcherProfile = function(req, res) {
 };
 
 module.exports.addNewProject = function(req, res) {
-  console.log(req.body);
-  console.log(req.file);
-  res.json({success: true});
-  // Researcher.create(req.body, function(err, researcher) {
-  //   if (err) {
-  //     console.log(err);
-  //     sendJsonResponse(res, 404, err);
-  //   } else {
-  //     sendJsonResponse(res, 201, researcher);
-  //   }
-  // });
+  getResearcherData(req, res, function(req, res, researcherData) {
+    // Need to wrap project creation function (start is below)
+    // in user validation function by getting researcher's permissions 
+
+    console.log(req.body);
+    console.log(req.file);
+    res.json({success: true});
+    // Researcher.create(req.body, function(err, researcher) {
+    //   if (err) {
+    //     console.log(err);
+    //     sendJsonResponse(res, 404, err);
+    //   } else {
+    //     sendJsonResponse(res, 201, researcher);
+    //   }
+    // });
+    
+  });
+
 };
 
