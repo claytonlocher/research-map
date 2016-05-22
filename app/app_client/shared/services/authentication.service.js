@@ -51,12 +51,37 @@
       $window.localStorage.removeItem('geogApp-token');
     };
 
+    var isLoggedIn = function() {
+      var token = getToken();
+
+      if (token) {
+        // Gets and decodes the payload from the token stored in localStorage
+        var payload = JSON.parse($window.atob(token.split('.')[1]));
+        console.log('Stored token:');
+        console.log(JSON.parse($window.atob(token)));
+        return payload.exp > Date.now() / 1000;
+      } else {
+        return false;
+      }
+    };
+
+    var currentUser = function() {
+      if (isLoggedIn()) {
+        var token = getToken();
+        var payload = JSON.parse($window.atob(token.split('.')[1]));
+        return {
+          netId: payload.netId
+        };
+      }
+    };
+
     return {
       saveToken: saveToken,
       getToken: getToken,
       register: register,
       login: login,
-      logout: logout
+      logout: logout,
+      isLoggedIn: isLoggedIn
     };
 
   }
