@@ -11,17 +11,17 @@ const auth = jwt({
 
 var ctrlResearchers = require('../controllers/researchers');
 var ctrlProjects = require('../controllers/projects');
-//var ctrlLocations = requine('../controllers/locations');
+//var ctrlLocations = require('../controllers/locations');
 var ctrlAuth = require('../controllers/authentication');
 
 // Researchers
 router.get('/researchers', ctrlResearchers.getAllResearchers);
 router.get('/researcher/:netId', ctrlResearchers.getResearcherProfile);
-router.post('/researcher', auth, ctrlResearchers.addNewResearcher);
+router.post('/researcher', auth, ctrlResearchers.addNewResearcher); // ***Auth***
 
 // Projects
 router.get('/projects', ctrlProjects.getAllProjects);
-router.post('/project', auth, ctrlProjects.addNewProject);
+router.post('/project', auth, ctrlProjects.addNewProject); // ***Auth***
 
 // Users
 router.post('/register', ctrlAuth.register);

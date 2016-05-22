@@ -3,13 +3,36 @@
 
 const mongoose = require('mongoose');
 const Project = mongoose.model('Project');
+const User = mongoose.model('User');
 
 function sendJsonResponse(res, status, content) {
   res.status(status);
   res.json(content);
 };
 
-// methods
+var getResearcherData = function(req, res, callback) {
+  if (req.payload && req.payload.netId) {
+    User
+      .findOne({
+        netId: req.payload.netId
+      })
+      .exec(function(err, user) {
+        if (!user) {
+          sendJSONResponse(res, 404, {
+            "message": "User not found"
+          });
+          return;
+        } else if (err) {
+          console.log(err);
+          sendJSONResponse(res, 404, err);
+          return;
+        } else {
+          callback(req, res, user);
+        }
+      })
+  }
+};
+
 module.exports.getAllProjects = function(req, res) {
   Project.find(function(err, projects) {
     if (err) {
@@ -20,34 +43,18 @@ module.exports.getAllProjects = function(req, res) {
   });
 };
 
-// module.exports.getResearcherProfile = function(req, res) {
-//   Researcher
-//     .findById(req.params.netId)
-//     .exec(function(err, researcher) {
-//       if (!researcher) {
-//         sendJsonResponse(res, 404, {
-//           "message": "NetID Not Found"
-//         });
-//         return;
-//       } else if (err) {
-//         sendJsonResponse(res, 404, err);
-//         return;
-//       } else {
-//         sendJsonResponse(res, 200, researcher);
-//       }
-//     });
-// };
-
 module.exports.addNewProject = function(req, res) {
-
-  Project.create(req.body, function(err, project) {
-    if (err) {
-      console.log(err);
-      sendJsonResponse(res, 404, err);
-    } else {
-      sendJsonResponse(res, 201, project);
-    }
+  getResearcherData(req, res, function(req, res, user) {
+    Project.create(req.body, function(err, project) {
+      if (err) {
+        console.log(err);
+        sendJsonResponse(res, 404, err);
+      } else {
+        sendJsonResponse(res, 201, project);
+      }
+    });
   });
+
 
 
   // getResearcherData(req, res, function(req, res, researcherData) {
