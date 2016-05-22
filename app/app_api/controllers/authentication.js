@@ -11,7 +11,7 @@ var sendJSONResponse = function(res, status, content) {
 };
 
 module.exports.register = function(req, res) {
-  if (!req.body.netId || req.body.password) {
+  if (!req.body.netId || !req.body.password) {
     sendJSONResponse(res, 400, {
       "message": "All fields required"
     });
@@ -37,7 +37,7 @@ module.exports.register = function(req, res) {
 };
 
 module.exports.login = function(req, res) {
-  if (!req.body.netId || req.body.password) {
+  if (!req.body.netId || !req.body.password) {
     sendJSONResponse(res, 400, {
       "message": "All fields required"
     });
@@ -54,7 +54,7 @@ module.exports.login = function(req, res) {
 
     if (user) {
       token = user.generateJwt();
-      sendJSONRepsonse(res, 200, {
+      sendJSONResponse(res, 200, {
         "token": token
       });
     } else {
