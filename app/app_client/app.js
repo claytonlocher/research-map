@@ -25,6 +25,16 @@
         controller: 'genericCtrl',
         controllerAs: 'vm'
       })
+      .when('/register', {
+        templateUrl: 'components/auth/register/register.view.html',
+        controller: 'registerCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/login', {
+        templateUrl: 'components/auth/login/login.view.html',
+        controller: 'loginCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });

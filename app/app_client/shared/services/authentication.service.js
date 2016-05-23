@@ -21,9 +21,8 @@
       var defer = $q.defer();
 
       $http.post('/api/register', user).then(function success(response) {
-        saveToken(response.token);
-        defer.resolve();
-        // defer.resolve(response.token);
+        saveToken(response.data.token);
+        defer.resolve(response.config.data.netId);
       }, function error(response) {
         console.log(response);
         defer.reject(response);
@@ -37,8 +36,7 @@
 
       $http.post('/api/login', user).then(function success(response) {
         saveToken(response.token);
-        defer.resolve();
-        // defer.resolve(response.token);
+        defer.resolve(response.config.data.netId);
       }, function error(response) {
         console.log(response);
         defer.reject(response);
@@ -57,8 +55,6 @@
       if (token) {
         // Gets and decodes the payload from the token stored in localStorage
         var payload = JSON.parse($window.atob(token.split('.')[1]));
-        console.log('Stored token:');
-        console.log(JSON.parse($window.atob(token)));
         return payload.exp > Date.now() / 1000;
       } else {
         return false;

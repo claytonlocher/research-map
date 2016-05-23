@@ -1,0 +1,23 @@
+<geog-app-header content="vm.header"></geog-app-header>
+
+<!-- ng-controller="registerCtrl" -->
+
+<div class="content-container">
+  <h1>Register</h1>
+  <p>Already have an account? <a href="/#login?={{ vm.returnPage }}">Log in</a></p>
+  <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+  <form ng-submit="vm.onFormSubmit()">
+    <label for="formNetId">NetID
+      <input type="text" name="netId" id="formNetId" ng-model="vm.credentials.netId"/>
+    </label><br/>
+    <label for="formPassword">Password
+      <input type="password" name="password" id="formPassword" ng-model="vm.credentials.password"/>
+    </label><br/>
+    <label for="formPasswordConfirm">Confirm Password
+      <input type="password" name="passwordConfirm" id="formPasswordConfirm" ng-model="vm.credentials.passwordConfirm"/>
+    </label><br/>
+    <button type="submit" class="primary">Register</button>
+  </form>
+
+
+</div>
