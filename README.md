@@ -1,2 +1,2 @@
 # GGIS Research Map Web Application
-Webmap for displaying the research of UIUC professors.
+MEAN stack application for mapping the research of UIUC professors.
